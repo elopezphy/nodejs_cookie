@@ -1,0 +1,4 @@
+hola->Hola, soy el asistente de<b> Seguros de Banco Santander</b>.  Dígame en qué puedo ayudarle.
+contratar->¿Quiere saber el proceso de contratación / simulación de algún producto en concreto? ¿A qué ramo se refiere?<br>
+vida->Le puedo dar el proceso de contratación de un seguro de Vida No Vinculado con <b>descuento para colectivos</b> o para contratar y simular un seguro de la gama <b>Protección Familiar</b> o <b>Protección Empresas</b>. <br>¿A cuál se refiere?<br><button title='descuento para colectivos' class='multioption' onclick='select_option(this)'> descuento para colectivos </button><button title='Protección Familiar' class='multioption' onclick='select_option(this)'> Protección Familiar </button><button title='Protección Empresas' class='multioption' onclick='select_option(this)'> Protección Empresas </button>
+vinculado->Esta es la información que he encontrado en la documentación que podría ser de utilidad.

@@ -2,22 +2,32 @@ var express = require('express');
 var request = require('request');
 var fs = require('fs');
 var csv = require('csvtojson')
+var csv_ = require('fast-csv')
 var app = express();
 
 var conversations = ['hola','contratar','vida','partenon']
 var csvFilePath = "my.csv"
+
 
 csv({noheader:true})
 .fromFile(csvFilePath)
 .on('json',(jsonObj)=>{
     // combine csv header row and csv line to a json object 
     // jsonObj.a ==> 1 or 4 
-    console.log(jsonObj)
+  //  console.log(Object.keys(jsonObj).length)
 })
 .on('done',(error)=>{
-    console.log('end')
+   // console.log('end')
 })
 
+csv_
+ .fromPath("my.csv")
+ .on("data", function(data){
+     console.log(data);
+ })
+ .on("end", function(){
+     console.log("done");
+ });
 
 var options = { method: 'POST',
   url: 'https://asistente-santander-seguros-test.eu-gb.mybluemix.net/api/message/',
@@ -28,6 +38,7 @@ var options = { method: 'POST',
   body: 
    {},
   json: true };
+
 
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
